@@ -5,7 +5,7 @@ const InfoCard = props => {
         <div className='card-container'>
             <h2 className='title'>{props.title}</h2>
             <p className='date'>{props.date}</p>
-            <p className='explanation'>{props.esplanation}</p>
+            <p className='explanation'>{props.explanation}</p>
         </div>
     );
 };
