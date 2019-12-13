@@ -1,7 +1,6 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 
-let propsCount = 0;
 let items = [];
 
 const Carousel = props => {
