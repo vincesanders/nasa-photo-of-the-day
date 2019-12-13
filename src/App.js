@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from 'axios';
 import Carousel from './components/Caousel';
-import Banner from './components/Banner';
-import InfoCard from './components/InfoCard';
 
 function App() {
-  const [nasaPhotoDataArray, setNasaPhotoDataArray] = useState([]); //default state is an empty object
+  // const [nasaPhotoDataArray, setNasaPhotoDataArray] = useState([]); //default state is an empty object
+  const [photo1Data, setPhoto1Data] = useState({});
+  const [photo2Data, setPhoto2Data] = useState({});
+  const [photo3Data, setPhoto3Data] = useState({});
+  const [photo4Data, setPhoto4Data] = useState({});
+  const [photo5Data, setPhoto5Data] = useState({});
+  const [photo6Data, setPhoto6Data] = useState({});
   let days = ['12', '11', '09', '08', '06', '03']; //array of days we want to access
   let arr = [];
 
@@ -18,19 +22,21 @@ function App() {
         console.log(err);
       });
     }
+    setPhoto1Data(arr[0]);
+    setPhoto2Data(arr[1]);
+    setPhoto3Data(arr[2]);
+    setPhoto4Data(arr[3]);
+    setPhoto5Data(arr[4]);
+    setPhoto6Data(arr[5]);
   }
 
   useEffect(() => {
     getData();
-    setNasaPhotoDataArray(arr);
   }, []); //always put an empty array by default to avoid an infinite loop.
 
   return (
     <div >
-      {console.log(nasaPhotoDataArray)}
-      <Carousel dataArray={nasaPhotoDataArray} />
-      {/* <Banner imageURL={nasaPhotoData.url} title={nasaPhotoData.title} /> */}
-      {/* <InfoCard title={nasaPhotoData.title} date={nasaPhotoData.date} explanation={nasaPhotoData.explanation} /> */}
+      <Carousel photo1={photo1Data} photo2={photo2Data} photo3={photo3Data} photo4={photo4Data} photo5={photo5Data} photo6={photo6Data} />
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role='img' aria-label='rocket ship'>🚀</span>!
