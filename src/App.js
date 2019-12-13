@@ -5,7 +5,7 @@ import Carousel from './components/Caousel';
 
 function App() {
   const [nasaPhotoDataArray, setNasaPhotoDataArray] = useState([]); //default state is an empty object
-  let days = ['12', '11', '09', '08', '06', '03']; //array of days we want to access
+  let days = ['12', '11', '01', '08', '06', '03']; //array of days we want to access
   let arr = [];
 
   async function getData() {
